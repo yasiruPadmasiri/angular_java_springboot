@@ -10,11 +10,13 @@ import {AppComponent} from '../app.component';
 })
 export class WelcomeComponent implements OnInit {
 
+  name=''
   constructor(private route:ActivatedRoute) { }
 
   ngOnInit() {
 
     console.log (this.route.snapshot.params['name'])
+   this.name= this.route.snapshot.params['name']
   }
 
 }
