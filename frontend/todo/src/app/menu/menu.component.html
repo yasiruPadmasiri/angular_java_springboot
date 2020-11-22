@@ -2,13 +2,13 @@
     <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
         <div> <a href="https://www.yasiruPadmasiri.com" class="navbar-brand"> yasiruPadmasiri</a></div>
     <ul class="navbar-nav">
-        <li><a *ngIf='this.HardcodeAuthenticationService.isUserLoggedIn()' routerLink='/welcome/yasiruPadmasiri'class='nav-link'> Home</a></li>
-        <li><a *ngIf='this.HardcodeAuthenticationService.isUserLoggedIn()' routerLink='/todo'class='nav-link'>Todos</a></li>
+        <li><a *ngIf='this.hardcodeAuthenticationService.isUserLoggedIn()' routerLink='/welcome/yasiruPadmasiri'class='nav-link'> Home</a></li>
+        <li><a *ngIf='this.hardcodeAuthenticationService.isUserLoggedIn()' routerLink='/todo'class='nav-link'>Todos</a></li>
         
     </ul>
     <ul class="navbar-nav navbar-collapse justify-content-end">
-        <li><a *ngIf='!this.HardcodeAuthenticationService.isUserLoggedIn()' routerLink='/login'class='nav-link'> Loging</a></li>
-        <li><a *ngIf='this.HardcodeAuthenticationService.isUserLoggedIn()' routerLink='/logout'class='nav-link'>Logout</a></li>
+        <li><a *ngIf='!this.hardcodeAuthenticationService.isUserLoggedIn()' routerLink='/login'class='nav-link'> Loging</a></li>
+        <li><a *ngIf='this.hardcodeAuthenticationService.isUserLoggedIn()' routerLink='/logout'class='nav-link'>Logout</a></li>
         
     </ul>
     </nav>
