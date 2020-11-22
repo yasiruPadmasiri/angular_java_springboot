@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
     // console.log(this.username);
     if(this.username==='yasiruPadmasiri'&&this.password==='padmasiri')
     {
+      console.log(this.router.navigate(['welcome',this.username]))
       this.router.navigate(['welcome',this.username])
       this.invalidLoging=false;
     }else
