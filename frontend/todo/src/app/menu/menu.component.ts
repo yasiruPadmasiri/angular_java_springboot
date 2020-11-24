@@ -11,6 +11,7 @@ export class MenuComponent implements OnInit {
   constructor( public hardcodeAuthenticationService :HardcodedAuthenticationService) { }
 
   ngOnInit(){
+    
     this.isUserLoggedIn=this.hardcodeAuthenticationService.isUserLoggedIn();
   }
 
