@@ -21,7 +21,7 @@ export class WelcomeComponent implements OnInit {
    this.name= this.route.snapshot.params['name']
   }
   getWelcomeMessage(){
-    this.service.executeHelloWorldService();
+   console.log ( this.service.executeHelloWorldService());
     // console.log("get welcome message");
   }
 
