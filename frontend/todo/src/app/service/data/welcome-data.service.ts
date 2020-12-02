@@ -2,9 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 
+
+export class HelloWorldBeans{
+  constructor(public message :String){}
+}
 @Injectable({
   providedIn: 'root'
 })
+
 export class WelcomeDataService {
 
   constructor(
@@ -12,7 +17,7 @@ export class WelcomeDataService {
 
   ) { }
   executeHelloWorldService(){
-   return  this.http.get('http://localhost:7090/hello-world-bean/path-varible/yasiru')
+   return  this.http.get<HelloWorldBeans>('http://localhost:7090/hello-world-bean')
     // console.log("execute hllo word bean service");
    // console.log(this.http.get('http://localhost:7090/hello-world-bean/path-varible/yasiru'));
   }

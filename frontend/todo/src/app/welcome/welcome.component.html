@@ -13,5 +13,16 @@
     click here to get customized welcome message
     <button (click)="getWelcomeMessage()" class="btn btn-success">Get Welcome Message</button>
 </p>
+
+
+</div>
+
+<div class="container" *ngIf="this. messageFromServiceVal" >
+    <h2>
+        your customized message here
+
+    </h2>
+    {{ messageFromService}}
+
 </div>
 <!-- (click)="getWelcomeMessage()" -->
