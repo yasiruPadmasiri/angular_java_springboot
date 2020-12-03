@@ -25,4 +25,12 @@
     {{ messageFromService}}
 
 </div>
+<div class="container" *ngIf="this. messageFromServiceErrorVal" >
+    <h2>
+        your customized message here
+
+    </h2>
+    {{ messageFromService}}
+
+</div>
 <!-- (click)="getWelcomeMessage()" -->

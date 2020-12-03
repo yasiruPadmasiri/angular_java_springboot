@@ -14,6 +14,7 @@ export class WelcomeComponent implements OnInit {
   name=''
   messageFromService:String=null;
   messageFromServiceVal=false
+  messageFromServiceErrorVal=false
 
   constructor(private route:ActivatedRoute,
               private service:WelcomeDataService) { }
@@ -26,11 +27,13 @@ export class WelcomeComponent implements OnInit {
 
 
   getWelcomeMessage(){
+
    console.log ( this.service.executeHelloWorldService());
+
    this.service.executeHelloWorldService().subscribe(
     //  response=>this.handleSuccessfullResponse(response)
-    response=>this.handleSuccessfullResponse(response)
-
+    response=>this.handleSuccessfullResponse(response),
+    error =>this.handleErrorResponse(error)
    );
    console.log("last line of getwelcome message");
     // console.log("get welcome message");
@@ -40,6 +43,10 @@ export class WelcomeComponent implements OnInit {
     console.log(response.message);
     this.messageFromServiceVal=true;
     this.messageFromService=response.message;
+  }
+  handleErrorResponse(error){
+    this.messageFromServiceErrorVal=true;
+    this.messageFromService=error.error.message;
   }
 
 }
