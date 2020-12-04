@@ -11,7 +11,7 @@
 </p>
 <p> 
     click here to get customized welcome message
-    <button (click)="getWelcomeMessage()" class="btn btn-success">Get Welcome Message</button>
+    <button (click)="getWelcomeMessageWithParameeter()" class="btn btn-success">Get Welcome Message</button>
 </p>
 
 
@@ -25,6 +25,20 @@
     {{ messageFromService}}
 
 </div>
+<div class="container" *ngIf="this. messageFromServiceErrorVal" >
+    <h2>
+        your customized message here
+
+    </h2>
+
+    
+    {{ messageFromService}}
+
+
+
+</div>
+
+
 <div class="container" *ngIf="this. messageFromServiceErrorVal" >
     <h2>
         your customized message here
