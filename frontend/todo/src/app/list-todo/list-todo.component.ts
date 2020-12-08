@@ -21,7 +21,7 @@ export class Todo{
 
 export class ListTodoComponent implements OnInit {
 
-  todos:Todo[];
+  todos :Todo[]
   
   // =
   
@@ -31,8 +31,12 @@ export class ListTodoComponent implements OnInit {
   //   new Todo(3,'Learn to fight',false,new Date()),
   //   new Todo(4,'Learn to Escape',false,new Date()),
   //   new Todo(5,'Learn to fight with Tricks',false,new Date()),
-  //   new Todo(5,'Learn to fight with Backupm Plan',false,new Date()),
-  // ]// {id:1 , description:'Learn to fight'},
+  //   new Todo(5,'Learn to fight with Backupm Plan',false,new Date())
+  // ]
+  
+  
+  
+  // {id:1 , description:'Learn to fight'},
     // {id:2,description:'Learn  Try to Defeat'},
     // {id:3,description:'Learn to Escape'},
     // {id:4,description:'Learn to fight with Tricks '}
@@ -41,18 +45,21 @@ export class ListTodoComponent implements OnInit {
   //   id:1,
   //   description:'Learn How to Fight'
   // }
-  constructor( private todoService:TodoDataService) {
+  constructor( public todoService:TodoDataService) {
     
    }
 
+
+   
+
   ngOnInit(){
-    this.todoService.retrieveAllTodos('yasiruPadmasiri').subscribe(
-      response=>{
-        console.log(response);
-        this.todos=response;
-      }
-     
-    )
+ this.todoService.retrieveAllTodos('yasiruPadmasiri').subscribe( 
+   response=>{
+     this.todos=response;
+   }
+
+ )
+   
    
   }
 
